@@ -3,8 +3,6 @@
 A collection of matchers and language enhancements to add a bit of polish to your specs2 specs.
 
 
-------------------------------------------------------------------------
-
 ## Build & Installation
 
 Not yet on maven central.
@@ -27,7 +25,6 @@ $ sbt package
 ```shell
 $ cp target/scala-2.11/specs2-exter_2.11-<version>.jar ../your-project/lib
 ```
-------------------------------------------------------------------------
 
 ## Using Matchers
 
@@ -45,7 +42,6 @@ class FooSpec extends SpecificationLike with Exter {
   // ...
 }
 ```
-------------------------------------------------------------------------
 
 ## Matchers
 
