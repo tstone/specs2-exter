@@ -5,8 +5,7 @@ A collection of matchers and language enhancements to add a bit of polish to you
 
 ------------------------------------------------------------------------
 
-
-## Build & Use
+## Build & Installation
 
 Not yet on maven central.
 
@@ -28,13 +27,25 @@ $ sbt package
 ```shell
 $ cp target/scala-2.11/specs2-exter_2.11-<version>.jar ../your-project/lib
 ```
-
 ------------------------------------------------------------------------
 
+## Using Matchers
+
+Mixin the matcher trait with the Specification class to get access to matchers.
+
+`Exter` -> all matchers
+`ExterSeq` -> only matchers for `Seq`
+
+##### Example:
+
+```scala
+class FooSpec extends SpecificationLike with Exter {
+
+}
+```
+------------------------------------------------------------------------
 
 ## Matchers
-
-For all matchers, add the trait `Exter` to the specification class.  To pick and choose matchers, add the trait for the matchers desired.
 
 
 #### containAll (Seq)
@@ -57,4 +68,14 @@ val seq = Seq(3, 2, 1)
 seq must containExactly(1, 2, 3) // true
 seq must containExactly(1, 2)    // false
 seq must containExactly(3, 4, 5) // false
+```
+#### containSome (Seq)
+
+Assert that at least one of the listed elements is within the given sequence
+
+```scala
+val seq = Seq(2, 4, 6)
+seq must containSome(6, 8, 10)  // true
+seq must containSome(6, 4, 2)   // true
+seq must containSome(8, 10, 12) // false
 ```
