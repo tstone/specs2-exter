@@ -28,7 +28,7 @@ $ cp target/scala-2.11/specs2-exter_2.11-1.0.0-pre.jar ../your-project/lib
 ##### 4.) Add the dependency to your sbt build file
 
 ```scala
-"org.specs2.exter" %% "specs2-exter" % "1.0.0-pre"
+"org.specs2.exter" %% "specs2-exter" % "1.0.0-pre" % "test"
 ```
 
 
