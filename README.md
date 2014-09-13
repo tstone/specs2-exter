@@ -33,14 +33,16 @@ $ cp target/scala-2.11/specs2-exter_2.11-<version>.jar ../your-project/lib
 
 Mixin the matcher trait with the Specification class to get access to matchers.
 
-  * `Exter` -> all matchers
-  * `ExterSeq` -> only matchers for `Seq`
+```
+Exter      // all matchers
+ExterSeq   // only matchers for Seq
+```
 
 ##### Example:
 
 ```scala
 class FooSpec extends SpecificationLike with Exter {
-
+  // ...
 }
 ```
 ------------------------------------------------------------------------
