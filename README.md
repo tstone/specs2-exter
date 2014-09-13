@@ -1,6 +1,6 @@
 # Exter
 
-### Extra goodies for Specs2
+##### Extra goodies for Specs2
 
 ----------------------------------------------------------------------
 
