@@ -26,15 +26,15 @@ $ sbt package
 $ cp target/scala-2.11/specs2-exter_2.11-<version>.jar ../your-project/lib
 ```
 
-## Notifires
+## Notifiers
 
-#### Minimal
+#### Minimal (notifier)
 
 A mocha-inspired runner that prints only dots for examples executed.  Errors are shown in an abbreviated format.
 
 ![screenshot](https://raw.githubusercontent.com/tstone/specs2-exter/master/doc/minimal-notifier-ss.png)
 
-##### Installation
+##### Use
 
 Add the following to your `build.sbt` or `Build.scala`:
 
@@ -43,7 +43,9 @@ testOptions in Test += Tests.Argument("notifier org.specs2.exter.notifier.Minima
 ```
 
 
-## Using Matchers
+## Matchers
+
+##### Use
 
 Mixin the matcher trait with the Specification class to get access to matchers.
 
@@ -62,8 +64,7 @@ class FooSpec extends SpecificationLike with Exter {
 }
 ```
 
-## Matchers
-
+### Included Matchers
 
 #### containAll (Seq)
 
