@@ -38,6 +38,8 @@ ExterSeq   // only matchers for Seq
 ##### Example:
 
 ```scala
+import org.specs2.exter.matcher.Exter
+
 class FooSpec extends SpecificationLike with Exter {
   // ...
 }
