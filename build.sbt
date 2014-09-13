@@ -11,3 +11,5 @@ organizationName := "Exter"
 libraryDependencies ++= Seq(
   "org.specs2" %% "specs2" % "2.4.2"
 )
+
+testOptions in Test += Tests.Argument("notifier org.specs2.exter.notifier.Minimal")
