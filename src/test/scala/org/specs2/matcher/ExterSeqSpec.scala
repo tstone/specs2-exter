@@ -1,6 +1,6 @@
 package org.specs2.matcher
 
-import org.specs2.exter.ExterSeq
+import org.specs2.exter.matcher.ExterSeq
 import org.specs2.mutable.SpecificationLike
 
 

@@ -1,4 +1,4 @@
-package org.specs2.exter
+package org.specs2.exter.matcher
 
 import org.specs2.matcher.{Expectable, Matcher}
 import org.specs2.specification.SpecificationStructure
