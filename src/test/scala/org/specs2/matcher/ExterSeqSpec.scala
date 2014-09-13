@@ -30,6 +30,12 @@ class ExterSeqSpec extends SpecificationLike with ExterSeq {
       val r = containAll(1, 2, 3, 4).apply(Expectable(subject))
       r.message must contain("does not contain '3' and '4'")
     }
+
+    "not blow up if the test subject is empty" in {
+      val subject = Seq[Int]()
+      val r = containAll(1, 2, 3).apply(Expectable(subject))
+      r.isSuccess must beFalse
+    }
   }
 
 
@@ -62,6 +68,18 @@ class ExterSeqSpec extends SpecificationLike with ExterSeq {
       val subject = Seq(5, 4, 3, 2, 1)
       val r = containExactly(1, 2, 3, 4).apply(Expectable(subject))
       r.message must contain("had extra values '5'")
+    }
+
+    "not blow up if the elements are repeated" in {
+      val subject = Seq(5, 5, 5, 1)
+      val r = containExactly(1, 5).apply(Expectable(subject))
+      r.isSuccess must beFalse
+    }
+
+    "not blow up if elements are repeated with identical length" in {
+      val subject = Seq(5, 5, 5, 1)
+      val r = containExactly(1, 5, 6, 7).apply(Expectable(subject))
+      r.isSuccess must beFalse
     }
   }
 
