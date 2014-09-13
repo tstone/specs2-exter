@@ -65,4 +65,31 @@ class ExterSeqSpec extends SpecificationLike with ExterSeq {
     }
   }
 
+
+  "containSome" should {
+    "fail if none of the elements are found" in {
+      val subject = Seq(4, 5, 6)
+      val r = containSome(7, 8, 9).apply(Expectable(subject))
+      r.isSuccess must beFalse
+    }
+
+    "succeed if at least one element is found" in {
+      val subject = Seq(2, 4, 6)
+      val r = containSome(6, 8, 10).apply(Expectable(subject))
+      r.isSuccess must beTrue
+    }
+
+    "succeed if at all elements are found" in {
+      val subject = Seq(6, 4, 2)
+      val r = containSome(2, 4, 6).apply(Expectable(subject))
+      r.isSuccess must beTrue
+    }
+
+    "report which value was found" in {
+      val subject = Seq(4, 5, 6)
+      val r = not(containSome(5, 6, 7)).apply(Expectable(subject))
+      r.message must contain("'5' and '6' found in")
+    }
+  }
+
 }

@@ -49,4 +49,20 @@ trait ExterSeq { self: SpecificationStructure =>
     }
   }
 
+
+  /** Assert that at least one of the listed elements is within the given sequence */
+  def containSome[A](values: A*) = new Matcher[Seq[A]] {
+    def apply[S <: Seq[A]](ex: Expectable[S]) = {
+      val subject = ex.value
+      val found = values.filter(subject.contains)
+
+      result(
+        found.length > 0,
+        s"${seqToEnglish(found)} found in $subject",
+        s"None of the expected values found (${seqToEnglish(values)}}) in $subject",
+        ex
+      )
+    }
+  }
+
 }
