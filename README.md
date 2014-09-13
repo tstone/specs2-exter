@@ -1,10 +1,41 @@
 # Exter
 
-##### Extra goodies for Specs2
+A collection of matchers and language enhancements to add a bit of polish to your specs2 specs.
 
-----------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+
+## Build & Use
+
+Not yet on maven central.
+
+##### 1.) Clone repository
+
+```shell
+$ git clone --depth 10 git@github.com:tstone/specs2-exter.git
+```
+
+##### 2.) Build
+
+```shell
+$ cd specs2-exter
+$ sbt package
+```
+
+##### 3.) Copy jar to your projet's lib folder
+
+```shell
+$ cp target/scala-2.11/specs2-exter_2.11-<version>.jar ../your-project/lib
+```
+
+------------------------------------------------------------------------
+
 
 ## Matchers
+
+For all matchers, add the trait `Exter` to the specification class.  To pick and choose matchers, add the trait for the matchers desired.
+
 
 #### containAll (Seq)
 

@@ -14,6 +14,7 @@ trait ExterSeq { self: SpecificationStructure =>
       .reverse
   }
 
+  /** Assert that a given sequence contains all of the listed elements, regardless of order. */
   def containAll[A](values: A*) = new Matcher[Seq[A]] {
     def apply[S <: Seq[A]](ex: Expectable[S]) = {
       val subject = ex.value
@@ -28,6 +29,7 @@ trait ExterSeq { self: SpecificationStructure =>
     }
   }
 
+  /** Assert that a given sequence contains all and no more of the listed elements, regardless of order. */
   def containExactly[A](values: A*) = new Matcher[Seq[A]] {
     def apply[S <: Seq[A]](ex: Expectable[S]) = {
       val subject = ex.value
