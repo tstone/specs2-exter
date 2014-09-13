@@ -38,6 +38,8 @@ $ cp target/scala-2.11/specs2-exter_2.11-1.0.0-pre.jar ../your-project/lib
 
 A mocha-inspired runner that prints only dots for examples executed.  Errors are shown in an abbreviated format.
 
+Note:  There is a bug in Specs2 that prevents notifiers from working correctly on versions < 2.4.
+
 ![screenshot](https://raw.githubusercontent.com/tstone/specs2-exter/master/doc/minimal-notifier-ss.png)
 
 ##### Use
